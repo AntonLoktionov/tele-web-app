@@ -9,10 +9,11 @@
     <title>Native QR Scanner</title>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 	<script>
-// 	function qrTextReceived(data) {
-//             Telegram.WebApp.sendData(data);
-//         }
-//         Telegram.WebApp.onEvent('qrTextReceived', qrTextReceived);
+	function qrTextReceived(data) {
+		document.querySelector('#comment').innerHTML = `Hi, ${data}`;
+            	Telegram.WebApp.sendData(data);
+        }
+        Telegram.WebApp.onEvent('qrTextReceived', qrTextReceived);
 	</script>
 </head>
 
@@ -21,8 +22,8 @@
     <main class="wrapper" style="padding-top:2em">
       
       
-      <div id="qr-reader" style="width: 600px">v7</div>
-       
+      <div id="qr-reader" style="width: 600px">v8</div>
+       <div id="comment" style="width: 600px">comment</div>
 
     </main>
 
