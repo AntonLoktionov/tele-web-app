@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="ZXing for JS">
+
+    <title>Native QR Scanner</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+
+<body>
+
+    <main class="wrapper" style="padding-top:2em">
+      
+      
+      <div id="qr-reader" style="width: 600px"></div>
+       
+
+    </main>
+
+    <script type="text/javascript">
+	    Telegram.WebApp.expand();
+      function onScanSuccess(decodedText) {
+        console.log(`Code scanned = ${decodedText}`);
+        return true;
+      }
+      Telegram.WebApp.showScanQrPopup({text: "Сканируй код!"}, onScanSuccess);
+      
+    </script>
+
+</body>
+
+</html>
