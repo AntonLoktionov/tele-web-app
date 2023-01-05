@@ -23,11 +23,12 @@
     <script type="text/javascript">
 	    Telegram.WebApp.expand();
       function onScanSuccess(decodedText) {
-        console.log(`Code scanned = ${decodedText}`);
-	      Telegram.WebApp.sendData(decodedText);
-        return true;
+         	//console.log(`Code scanned = ${decodedText}`);
+ 	      	Telegram.WebApp.sendData(decodedText);
+	     	Telegram.WebApp.close();
+        	return true;
       }
-      Telegram.WebApp.showScanQrPopup({text: "Сканируй код!"}, onScanSuccess);
+      Telegram.WebApp.showScanQrPopup({text: "Сканируй код!"}, function(){ onScanSuccess(); });
       
     </script>
 
